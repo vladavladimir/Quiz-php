@@ -36,7 +36,7 @@
         }
         else
         {
-            echo "<center><h3><script>alert('Sorry.. Wrong Username (or) Password');</script></h3></center>";
+            echo "<center><h3><script>alert('Greška.. Pogrešan Username (ili) Password');</script></h3></center>";
             header("refresh:0;url=admin.php");
         }
     }
@@ -47,7 +47,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>Admin Login | Online Quiz System</title>
+		<title>Admin Login | Online Kviz</title>
 		<link rel="stylesheet" href="scripts/bootstrap/bootstrap.min.css">
 		<link rel="stylesheet" href="scripts/ionicons/css/ionicons.min.css">
 		<link rel="stylesheet" href="css/form.css">
@@ -69,15 +69,15 @@
 				<div class="box-wrapper">				
 					<div class="box box-border">
 						<div class="box-body">
-						<center> <h5 style="font-family: Noto Sans;">Login to </h5><h4 style="font-family: Noto Sans;">Admin Page</h4></center><br>
+						<center> <h5 style="font-family: Noto Sans;">Login  </h5><h4 style="font-family: Noto Sans;">Admin Stranica</h4></center><br>
 							<form method="post" action="admin.php" enctype="multipart/form-data">
 								<div class="form-group">
-									<label>Enter Your Email Id:</label>
+									<label>Unesi Email:</label>
 									<input type="email" name="email" class="form-control">
 								</div>
 								<div class="form-group">
-									<label class="fw">Enter Your Password:
-										<a href="javascript:void(0)" class="pull-right">Forgot Password?</a>
+									<label class="fw">Unesi Password:
+										<a href="javascript:void(0)" class="pull-right">Zaboravljen Password?</a>
 									</label>
 									<input type="password" name="password" class="form-control">
 								</div> 

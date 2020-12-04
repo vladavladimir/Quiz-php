@@ -43,7 +43,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>Register | Online Quiz System</title>
+		<title>Register | Online Kviz</title>
 		<link rel="stylesheet" href="scripts/bootstrap/bootstrap.min.css">
 		<link rel="stylesheet" href="scripts/ionicons/css/ionicons.min.css">
 		<link rel="stylesheet" href="css/form.css">
@@ -65,22 +65,22 @@
 				<div class="box-wrapper">				
 					<div class="box box-border">
 						<div class="box-body">
-							<center> <h5 style="font-family: Noto Sans;">Register to </h5><h4 style="font-family: Noto Sans;">Online Quiz System</h4></center><br>
+							<center> <h5 style="font-family: Noto Sans;">Register  </h5><h4 style="font-family: Noto Sans;">Online Kviz</h4></center><br>
 							<form method="post" action="register.php" enctype="multipart/form-data">
                                 <div class="form-group">
-									<label>Enter Your Username:</label>
+									<label>Unesi Username:</label>
 									<input type="text" name="name" class="form-control" required />
 								</div>
 								<div class="form-group">
-									<label>Enter Your Email Id:</label>
+									<label>Unesi Email:</label>
 									<input type="email" name="email" class="form-control" required />
 								</div>
 								<div class="form-group">
-									<label>Enter Your Password:</label>
+									<label>Unesi Password:</label>
 									<input type="password" name="password" class="form-control" required />
                                 </div>
 								<div class="form-group">
-									<label>Enter Your College Name:</label>
+									<label>Unesi Ime i Prezime:</label>
 									<input type="text" name="college" class="form-control" required />
 								</div>
                                 
@@ -88,7 +88,7 @@
 									<button class="btn btn-primary btn-block" name="submit">Register</button>
 								</div>
 								<div class="form-group text-center">
-									<span class="text-muted">Already have an account! </span> <a href="login.php">Login </a> Here..
+									<span class="text-muted">Već imaš nalog! </span> <a href="login.php">Login </a> Ovde..
 								</div>
 							</form>
 						</div>

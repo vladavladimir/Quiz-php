@@ -5,7 +5,7 @@
 
   if(isset($_SESSION['key']))
   {
-    if(@$_GET['demail'] && $_SESSION['key']=='suryapinky') 
+    if(@$_GET['demail'] && $_SESSION['key']=='admin') 
     {
       $demail=@$_GET['demail'];
       $r1 = mysqli_query($con,"DELETE FROM rank WHERE email='$demail' ") or die('Error');
@@ -17,7 +17,7 @@
 
   if(isset($_SESSION['key']))
   {
-    if(@$_GET['q']== 'rmquiz' && $_SESSION['key']=='suryapinky') 
+    if(@$_GET['q']== 'rmquiz' && $_SESSION['key']=='admin') 
     {
       $eid=@$_GET['eid'];
       $result = mysqli_query($con,"SELECT * FROM questions WHERE eid='$eid' ") or die('Error');
@@ -30,13 +30,13 @@
       $r3 = mysqli_query($con,"DELETE FROM questions WHERE eid='$eid' ") or die('Error');
       $r4 = mysqli_query($con,"DELETE FROM quiz WHERE eid='$eid' ") or die('Error');
       $r4 = mysqli_query($con,"DELETE FROM history WHERE eid='$eid' ") or die('Error');
-      header("location:dashboard.php?q=5");
+      header("Location:dashboard.php?q=5");
     }
   }
 
   if(isset($_SESSION['key']))
   {
-    if(@$_GET['q']== 'addquiz' && $_SESSION['key']=='suryapinky') 
+    if(@$_GET['q']== 'addquiz' && $_SESSION['key']=='admin') 
     {
       $name = $_POST['name'];
       $name= ucwords(strtolower($name));
@@ -51,7 +51,7 @@
 
   if(isset($_SESSION['key']))
   {
-    if(@$_GET['q']== 'addqns' && $_SESSION['key']=='suryapinky') 
+    if(@$_GET['q']== 'addqns' && $_SESSION['key']=='admin') 
     {
       $n=@$_GET['n'];
       $eid=@$_GET['eid'];
@@ -145,7 +145,7 @@
       $sn++;
       header("location:welcome.php?q=quiz&step=2&eid=$eid&n=$sn&t=$total")or die('Error152');
     }
-    else if( $_SESSION['key']!='suryapinky')
+    else if( $_SESSION['key']!='admin')
     {
       $q=mysqli_query($con,"SELECT score FROM history WHERE eid='$eid' AND email='$email'" )or die('Error156');
       while($row=mysqli_fetch_array($q) )
