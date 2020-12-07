@@ -13,7 +13,7 @@ a:link { text-decoration: none; }
     content: '';
     width: 200px;
     display: block;
-    background: #ffee58;
+    background: #aa1e19;
     height: 6px;
     margin: 30px auto;
     line-height: 1.1;
@@ -21,13 +21,13 @@ a:link { text-decoration: none; }
   .btn {
     display: inline-block;
     padding: 15px 30px;
-    border: 2px solid #fff;
+    border: 4px solid #fff;
     text-transform: uppercase;
     letter-spacing: 0.015em;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
     line-height: 1;
-    color: #fff;
+    color: #aa1e19;
     text-decoration: none;
     -webkit-transition: all 0.4s;
        -moz-transition: all 0.4s;
@@ -35,14 +35,14 @@ a:link { text-decoration: none; }
             transition: all 0.4s;
   }
   .btn:hover {
-    color: #000;
+    color: #aa1e19;
     border-color: #fff;
-    background-color: #607d8b;
+    background-color: #003456;
   }
   h2 {
-    color: #ffd600;
+    color: #ffffff;
     text-transform: uppercase;
-    font-size: 35px;
+    font-size: 38px;
     font-weight: 700;
     letter-spacing: 0.015em;
   }

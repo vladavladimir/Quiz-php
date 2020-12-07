@@ -21,7 +21,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dobrodošli | Online Kviz</title>
     <link  rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link  rel="stylesheet" href="css/bootstrap-theme.min.css"/>    
+    <link  rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+    <link rel="shortcut icon" type="image/png" href="image/logo.png" />
     <link rel="stylesheet" href="css/welcome.css">
     <link  rel="stylesheet" href="css/font.css">
     <script src="js/jquery.js" type="text/javascript"></script>
@@ -66,7 +67,7 @@
                 {
                     $result = mysqli_query($con,"SELECT * FROM quiz ORDER BY date DESC") or die('Error');
                     echo  '<div class="panel"><div class="table-responsive"><table class="table table-striped title1">
-                    <tr><td><center><b>S.N.</b></center></td><td><center><b>Tema</b></center></td><td><center><b>Broj pitanja</b></center></td><td><center><b>Max Skor</center></b></td><td><center><b>Opcije</b></center></td></tr>';
+                    <tr><td><center><b>S.N.</b></center></td><td><center><b>Tema</b></center></td><td><center><b>Broj pitanja</b></center></td><td><center><b>Max Broj Poena</center></b></td><td><center><b>Opcije</b></center></td></tr>';
                     $c=1;
                     while($row = mysqli_fetch_array($result)) {
                         $title = $row['title'];
@@ -111,7 +112,7 @@
                             $optionid=$row['optionid'];
                             echo'<input type="radio" name="ans" value="'.$optionid.'">&nbsp;'.$option.'<br /><br />';
                         }
-                        echo'<br /><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span>&nbsp;Submit</button></form></div>';
+                        echo'<br /><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span>&nbsp;Odgovori</button></form></div>';
                     }
 
                     if(@$_GET['q']== 'result' && @$_GET['eid']) 
@@ -119,7 +120,7 @@
                         $eid=@$_GET['eid'];
                         $q=mysqli_query($con,"SELECT * FROM history WHERE eid='$eid' AND email='$email' " )or die('Error157');
                         echo  '<div class="panel">
-                        <center><h1 class="title" style="color:#660033">Result</h1><center><br /><table class="table table-striped title1" style="font-size:20px;font-weight:1000;">';
+                        <center><h1 class="title" style="color:#660033">Rezultati</h1><center><br /><table class="table table-striped title1" style="font-size:20px;font-weight:1000;">';
 
                         while($row=mysqli_fetch_array($q) )
                         {
@@ -130,13 +131,13 @@
                             echo '<tr style="color:#66CCFF"><td>Total Pitanja</td><td>'.$qa.'</td></tr>
                                 <tr style="color:#99cc32"><td>Tačan Odgovor&nbsp;<span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></td><td>'.$r.'</td></tr> 
                                 <tr style="color:red"><td>Netačan Odgovor&nbsp;<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></td><td>'.$w.'</td></tr>
-                                <tr style="color:#66CCFF"><td>Skor&nbsp;<span class="glyphicon glyphicon-star" aria-hidden="true"></span></td><td>'.$s.'</td></tr>';
+                                <tr style="color:#66CCFF"><td>Rezultat&nbsp;<span class="glyphicon glyphicon-star" aria-hidden="true"></span></td><td>'.$s.'</td></tr>';
                         }
                         $q=mysqli_query($con,"SELECT * FROM rank WHERE  email='$email' " )or die('Error157');
                         while($row=mysqli_fetch_array($q) )
                         {
                             $s=$row['score'];
-                            echo '<tr style="color:#990000"><td>Ukupan Skor&nbsp;<span class="glyphicon glyphicon-stats" aria-hidden="true"></span></td><td>'.$s.'</td></tr>';
+                            echo '<tr style="color:#990000"><td>Ukupan Rezultat&nbsp;<span class="glyphicon glyphicon-stats" aria-hidden="true"></span></td><td>'.$s.'</td></tr>';
                         }
                         echo '</table></div>';
                     }
@@ -148,7 +149,7 @@
                         $q=mysqli_query($con,"SELECT * FROM history WHERE email='$email' ORDER BY date DESC " )or die('Error197');
                         echo  '<div class="panel title">
                         <table class="table table-striped title1" >
-                        <tr style="color:black;"><td><center><b>S.N.</b></center></td><td><center><b>Kviz</b></center></td><td><center><b>Rešena Pitanja</b></center></td><td><center><b>Tačno</b></center></td><td><center><b>Netačno<b></center></td><td><center><b>Skor</b></center></td>';
+                        <tr style="color:black;"><td><center><b>S.N.</b></center></td><td><center><b>Kviz</b></center></td><td><center><b>Rešena Pitanja</b></center></td><td><center><b>Tačno</b></center></td><td><center><b>Netačno<b></center></td><td><center><b>Rezultat</b></center></td>';
                         $c=0;
                         while($row=mysqli_fetch_array($q) )
                         {
@@ -172,7 +173,7 @@
                         $q=mysqli_query($con,"SELECT * FROM rank ORDER BY score DESC " )or die('Error223');
                         echo  '<div class="panel title"><div class="table-responsive">
                         <table class="table table-striped title1" >
-                        <tr style="color:red"><td><center><b>Rank</b></center></td><td><center><b>Ime</b></center></td><td><center><b>Email</b></center></td><td><center><b>Skor</b></center></td></tr>';
+                        <tr style="color:red"><td><center><b>Rank</b></center></td><td><center><b>Ime</b></center></td><td><center><b>Email</b></center></td><td><center><b>Rezultat</b></center></td></tr>';
                         $c=0;
 
                         while($row=mysqli_fetch_array($q) )

@@ -21,7 +21,7 @@
 		$result = mysqli_query($con,$str);
 		if((mysqli_num_rows($result))!=1) 
 		{
-			echo "<center><h3><script>alert('Sorry.. Wrong Username (or) Password');</script></h3></center>";
+			echo "<center><h3><script>alert('Izvini te.. Pogrešan Username (ili) Password');</script></h3></center>";
 			header("refresh:0;url=login.php");
 		}
 		else
@@ -46,11 +46,12 @@
 		<title>Login | Online Kviz</title>
 		<link rel="stylesheet" href="scripts/bootstrap/bootstrap.min.css">
 		<link rel="stylesheet" href="scripts/ionicons/css/ionicons.min.css">
+        <link rel="shortcut icon" type="image/png" href="image/logo.png" />
 		<link rel="stylesheet" href="css/form.css">
         <style type="text/css">
             body{
                   width: 100%;
-                  background: url(image/book.png) ;
+                  background: url(image/book.jpg) ;
                   background-position: center center;
                   background-repeat: no-repeat;
                   background-attachment: fixed;
@@ -81,7 +82,7 @@
 									<button class="btn btn-primary btn-block" name="submit">Login</button>
 								</div>
 								<div class="form-group text-center">
-									<span class="text-muted">Niste još napravili nalog?</span> <a href="register.php">Register</a> Ovde..
+									<span class="text-muted">Niste još napravili nalog?</span> <a href="register.php">Registrujte se</a> Ovde..
 								</div>
 							</form>
 						</div>
