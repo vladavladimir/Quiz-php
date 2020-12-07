@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2020 at 03:24 PM
+-- Generation Time: Dec 07, 2020 at 01:44 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -109,7 +109,8 @@ CREATE TABLE `history` (
 --
 
 INSERT INTO `history` (`email`, `eid`, `score`, `level`, `sahi`, `wrong`, `date`) VALUES
-('vlad@pointmars.rs', '5fca361dd16f0', 29, 29, 29, 0, '2020-12-04 14:16:42');
+('vlad@pointmars.rs', '5fca361dd16f0', 29, 29, 29, 0, '2020-12-04 14:16:42'),
+('mjiron@42nmarketing.com', '5fca361dd16f0', 17, 29, 17, 12, '2020-12-07 12:32:46');
 
 -- --------------------------------------------------------
 
@@ -345,7 +346,8 @@ CREATE TABLE `rank` (
 INSERT INTO `rank` (`email`, `score`, `time`) VALUES
 ('pinky@gmail.com', 30, '2018-06-03 16:57:45'),
 ('priyanka@gmail.com', 22, '2018-06-03 16:59:06'),
-('vlad@pointmars.rs', 35, '2020-12-04 14:16:42');
+('vlad@pointmars.rs', 35, '2020-12-04 14:16:42'),
+('mjiron@42nmarketing.com', 17, '2020-12-07 12:32:46');
 
 -- --------------------------------------------------------
 
@@ -357,17 +359,23 @@ CREATE TABLE `user` (
   `name` varchar(50) NOT NULL,
   `college` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `groupe` varchar(256) NOT NULL,
+  `state` varchar(256) NOT NULL,
+  `place` varchar(256) NOT NULL,
+  `birth` varchar(256) NOT NULL,
+  `phone` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`name`, `college`, `email`, `password`) VALUES
-('Swagatika Padhi', 'National Institute of Science and Technology, Berhampur', 'pinky@gmail.com', 'pinky'),
-('Priyanka Pattnaik', 'National Institute of Science and Technology, Berhampur', 'priyanka@gmail.com', 'pinka'),
-('Vladimir Markovic', 'Vlada', 'vlad@pointmars.rs', '16351635');
+INSERT INTO `user` (`name`, `college`, `email`, `password`, `groupe`, `state`, `place`, `birth`, `phone`) VALUES
+('Alex', 'ada vlada', 'mjiron@42nmarketing.com', 'testtest', 'stakljarski', 'dembelija', 'batajnica', '', ''),
+('Swagatika Padhi', 'National Institute of Science and Technology, Berhampur', 'pinky@gmail.com', 'pinky', '', '', '', '', ''),
+('Priyanka Pattnaik', 'National Institute of Science and Technology, Berhampur', 'priyanka@gmail.com', 'pinka', '', '', '', '', ''),
+('Vladimir Markovic', 'Vlada', 'vlad@pointmars.rs', '16351635', '', '', '', '', '');
 
 --
 -- Indexes for dumped tables
